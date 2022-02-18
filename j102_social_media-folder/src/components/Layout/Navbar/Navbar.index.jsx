@@ -18,31 +18,59 @@ const Navbar = () => {
   const logout = useLogout();
 
   return (
-    <header className="Navbar">
-      <nav className="flex justify-around">
-        <h1>LOGO</h1>
+    <header className="Navbar w-full">
+      <nav className="flex justify-around py-4 items-center">
+        <h1 className="text-center font-piou text-blue-300 text-3xl">
+          Piou Piou <br />
+          <span className="font-land text-yellow-200">LAND</span>
+        </h1>
         <ul className="flex w-[70%] justify-around flex-row">
           <li>
-            <Link to="/">Accueil</Link>
+            <Link
+              className="text-blue-300 hover:text-yellow-200 font-land "
+              to="/"
+            >
+              Accueil
+            </Link>
           </li>
 
           {!!currentUser ? (
             <>
               <li>
-                <Link to="profile">Profile</Link>
+                <Link
+                  to="profile"
+                  className="text-blue-300 hover:text-yellow-200 font-land "
+                >
+                  Profile
+                </Link>
               </li>
 
               <li>
-                <button onClick={logout}>Log out</button>
+                <button
+                  className="text-blue-300 hover:text-yellow-200 font-land "
+                  onClick={logout}
+                >
+                  Log out
+                </button>
               </li>
             </>
           ) : (
             <>
               <li>
-                <Link to="login">Login</Link>
+                <Link
+                  to="login"
+                  className="text-blue-300 hover:text-yellow-200 font-land "
+                >
+                  Login
+                </Link>
               </li>
               <li>
-                <Link to="register">Registration</Link>
+                <Link
+                  to="register"
+                  className="text-blue-300 hover:text-yellow-200 font-land "
+                >
+                  Registration
+                </Link>
               </li>
             </>
           )}

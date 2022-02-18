@@ -53,17 +53,28 @@ const Feed = () => {
 
   console.log("postsStore", postsStore);
   return (
-    <div>
+    <div className="w-[50%] my-6">
       {postsStore.loading && "Chargement"}
+      <h3 className="mb-4 font-land text-white text-lg">
+        Les derniers cuicuis :{" "}
+      </h3>
+
       {postsStore.posts.map((post) => (
-        <div key={post.id}>
+        <div key={post.id} className="my-12 ">
           <h3>
-            <Link to={"profile/" + post.user.id}>{post.user.username}</Link> a
-            partagé :
+            <Link
+              to={"profile/" + post.user.id}
+              className="font-land text-white hover:text-yellow-200 mb-2"
+            >
+              {post.user.username}
+            </Link>{" "}
+            a partagé :
           </h3>
-          <p>{post.text}</p>
+          <pre className="mb-2 bg-yellow-100 rounded p-4">{post.text}</pre>
+
           <p>
-            Le {post.updated_at} et a obtenu {post.like} pioupious
+            Le {new Date(post.updated_at).toLocaleDateString()} et a obtenu{" "}
+            {post.like} <span className="font-piou text-lg">pioupious</span>
           </p>
         </div>
       ))}

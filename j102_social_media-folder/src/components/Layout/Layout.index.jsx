@@ -37,9 +37,9 @@ const Layout = (props) => {
   }, []);
 
   return (
-    <div className="Layout flex">
+    <div className="Layout flex flex-col">
       <Navbar />
-      {props.children}
+      <div className="bg-blue-200 !min-h-[100vh]">{props.children}</div>
     </div>
   );
 };

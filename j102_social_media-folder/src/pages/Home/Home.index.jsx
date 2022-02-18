@@ -12,21 +12,62 @@ import React from "react";
 import { useCurrentUser } from "../Register/Register.index";
 import Feed from "./components/Feed/Feed.index";
 import NewPostForm from "./components/NewPostForm/NewPostForm.index";
+import { Link } from "react-router-dom";
+import pioupiou from "./img/pioupioulogo.png";
 
 const Home = () => {
   const currentUser = useCurrentUser();
 
   return (
-    <div className="Home">
-      <h1>
-        Welcome on My Social Network{" "}
-        {currentUser ? currentUser.username : "Anonymous"}{" "}
-      </h1>
-      <p>
-        This website is a training to Redux and React. We use auth and routing
-        to create a small social media website.
-      </p>
+    <div className="Home flex flex-col items-center">
+      <div className="flex flex-rox flex-wrap">
+        <div className="md:w-[40%] flex justify-center">
+          <img src={pioupiou} className="w-[50%]" alt="pioupiou" />
+        </div>
+        <div className="md:w-[60%]">
+          <h1 className="font-land text-5xl text-white">
+            Bienvenue sur Pioupiou Land,{" "}
+            <span className="text-yellow-200">
+              {currentUser ? currentUser.username : "Poussin anonyme"} !
+            </span>
+          </h1>
+          <br />
+          <p>
+            Le meilleur site pour jacasser en toute tranquillité !
+            <br />
+            Vous pouvez ici : poster vos messages, retrouver d'autres poussins
+            et interagir avec eux en leur donnant des{" "}
+            <span className="font-piou text-lg">pioupious</span>.
+          </p>
+          <br />
+          <br />
+          <br />
+          {!currentUser && (
+            <div>
+              <p>
+                Tu n'es pas encore connecté(e) ? Rejoins le poulailler en te{" "}
+                <Link
+                  to="login"
+                  className="font-land text-white hover:text-yellow-200"
+                >
+                  connectant
+                </Link>{" "}
+                ou en{" "}
+                <Link
+                  to="register"
+                  className="font-land text-white hover:text-yellow-200"
+                >
+                  t'enregistrant
+                </Link>{" "}
+                !
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+
       {currentUser && <NewPostForm />}
+
       <Feed />
     </div>
   );

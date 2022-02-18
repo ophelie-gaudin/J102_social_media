@@ -49,7 +49,8 @@ export const AllUserPosts = (props) => {
           </h3>
           <p>{post.text}</p>
           <p>
-            Le {post.updated_at} et a obtenu {post.like} pioupious
+            Le {post.updated_at} et a obtenu {post.like}{" "}
+            <span className="font-piou text-lg">pioupious</span>
           </p>
         </div>
       ))}

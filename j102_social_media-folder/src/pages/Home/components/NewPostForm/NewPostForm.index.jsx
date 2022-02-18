@@ -39,21 +39,26 @@ const NewPostForm = () => {
   };
 
   return (
-    <div className="NewPostForm">
-      <h1>Poster un nouveau message :</h1>
+    <div className="NewPostForm my-6 w-[50%]">
+      <h3 className="mb-4 font-land text-white text-lg">
+        Poster un nouveau message :
+      </h3>
 
-      <form id="new-post-form" onSubmit={handleSubmit}>
-        <label htmlFor="password">
-          Votre message: <br />
-          <textarea
-            id="content"
-            type="content"
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-          />{" "}
-          <br />
-        </label>
-        <button type="submit">Je publie</button>
+      <form id="new-post-form" onSubmit={handleSubmit} className="w-full">
+        <textarea
+          id="content"
+          type="content"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+          className="w-[50%]"
+        />{" "}
+        <br />
+        <button
+          type="submit"
+          className="py-2 px-6 bg-yellow-200 text-white my-8 rounded-xl font-land text-xl"
+        >
+          Je publie
+        </button>
       </form>
     </div>
   );

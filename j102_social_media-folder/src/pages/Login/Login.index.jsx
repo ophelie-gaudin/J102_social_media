@@ -41,12 +41,12 @@ const Login = () => {
   };
 
   return (
-    <div className="Login">
-      <h1>Je me connecte</h1>
+    <div className="Login mb-2 bg-yellow-100 rounded p-4 w-[40%] mx-auto flex flex-col items-center justify-center">
+      <h1 className="font-land text-3xl text-blue-300 my-6">Je me connecte</h1>
 
       <form id="register-form" onSubmit={handleSubmit}>
         <label htmlFor="email">
-          Votre email: <br />
+          Blazz' de poussin dans la place : <br />
           <input
             id="email"
             type="text"
@@ -55,8 +55,9 @@ const Login = () => {
           />{" "}
           <br />
         </label>
+        <br />
         <label htmlFor="password">
-          Votre password: <br />
+          Cuicui secret : <br />
           <input
             id="password"
             type="password"
@@ -65,7 +66,13 @@ const Login = () => {
           />{" "}
           <br />
         </label>
-        <button type="submit">Je m'authentifie</button>
+
+        <button
+          type="submit"
+          className="py-2 px-6 bg-blue-300 text-white my-8 rounded-xl font-land text-xl"
+        >
+          éclore
+        </button>
       </form>
     </div>
   );
